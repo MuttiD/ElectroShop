@@ -84,8 +84,20 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-WSGI_APPLICATION = 'electroshop.wsgi.application'
+# from https://docs.djangoproject.com/en/4.1/topics/email/#django.core.mail.backends.smtp.EmailBackend
+# This backend is not intended for use in production
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# added from a complete project
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'            # get authentication from either a username or email
+ACCOUNT_EMAIL_REQUIRED = True                               # this are required for login in
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'                    # to verify the email address
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True                     # to check if the email address is typing correctly
+ACCOUNT_USERNAME_MIN_LENGHT = 4
+LOGIN_URL = '/accounts/login/'                              # specify the location of the url
+LOGIN_REDIRECT_URL = '/'                            # redirect to the home page of our online store
+
+WSGI_APPLICATION = 'electroshop.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
