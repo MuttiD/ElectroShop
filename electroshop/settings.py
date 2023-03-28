@@ -95,7 +95,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'mandatory'                    # to verify the emai
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True                     # to check if the email address is typing correctly
 ACCOUNT_USERNAME_MIN_LENGHT = 4
 LOGIN_URL = '/accounts/login/'                              # specify the location of the url
-LOGIN_REDIRECT_URL = '/'                            # redirect to the home page of our online store
+LOGIN_REDIRECT_URL = '/'                                    # redirect to the home page of our online store
 
 WSGI_APPLICATION = 'electroshop.wsgi.application'
 
