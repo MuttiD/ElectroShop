@@ -24,6 +24,20 @@
 
 # Technologies Used
 
+pexel
+pixabay
+
+fontawesome
+
+google fonts
+
+TinyPNG
+
+Bootstrap
+
+Django
+
+JSON Formatter
 # Testing
 
 ## Validation

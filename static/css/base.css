@@ -38,6 +38,11 @@ body {
     color: white;
 }
 
+.btn-green {
+    background: #5cae5b;
+    color: white;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
@@ -54,6 +59,10 @@ body {
 
 .border-black {
     border: 1px solid black !important;
+}
+
+.bg-red {
+    background: rgb(139, 22, 22) !important;
 }
 
 /* -------------------------------- Media Queries */
