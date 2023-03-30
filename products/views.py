@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
-# 'Q' an object to generate search queries. either product name or description.poweful tool!!
+# 'Q' an object to generate search queries. either product name or description.
 from django.db.models import Q
 from .models import Product, Category
 
@@ -26,7 +26,9 @@ def all_products(request):
             sort = sortkey
             if sortkey == 'name':
                 sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
+                products = product.annotate(lower_name=Lower('name'))
+            if sortkey == 'category':
+                sortkey = 'category__name'
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
