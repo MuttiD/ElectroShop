@@ -79,6 +79,8 @@ TEMPLATES = [
     },
 ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
+
 AUTHENTICATION_BACKENDS = [
 
     # Needed for superusers to login by username in Django admin, regardless of `allauth`
