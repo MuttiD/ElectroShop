@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import OrderForm
-from .models import OrderLineItem
+from .models import Order, OrderLineItem
 from products.models import Product
 from bag.contexts import bag_contents
 
@@ -41,15 +41,15 @@ def checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
-                    else:
-                        for size, quantity in item_data['items_by_size'].items():
-                            order_line_item = OrderLineItem(
-                                order=order,
-                                product=product,
-                                quantity=quantity,
-                                product_size=size,
-                            )
-                            order_line_item.save()
+                    #else:
+                    #    for size, quantity in item_data['items_by_size'].items():
+                    #        order_line_item = OrderLineItem(
+                    #            order=order,
+                    #            product=product,
+                    #            quantity=quantity,
+                    #            product_size=size,
+                    #        )
+                    #        order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
                         "One of the products in your bag wasn't found in our database. "
