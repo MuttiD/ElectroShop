@@ -121,7 +121,5 @@ form.addEventListener('submit', function(ev) {
         // reload the page, the error will be in django messages
         // customer wont be charged
         location.reload();
-    })
-
-    
+    })    
 });
