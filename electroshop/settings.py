@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = True
 # DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['https://app-electro.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['app-electro.herokuapp.com', 'localhost']
 
 
 # Application definition
