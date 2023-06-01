@@ -31,7 +31,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = True
 # DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['app-electro.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [
+    'app-electro.herokuapp.com', 'localhost',
+    '8000-muttid-electroshop-coaba024szp.ws-eu98.gitpod.io'
+    ]
 
 
 # Application definition

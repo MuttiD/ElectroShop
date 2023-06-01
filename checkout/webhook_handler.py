@@ -52,6 +52,7 @@ class StripeWH_Handler:
         Handle the payment_intent.succeeded webhook from Stripe
         """
         intent = event.data.object
+        print(intent)
         pid = intent.id
         bag = intent.metadata.bag
         save_info = intent.metadata.save_info
@@ -61,9 +62,9 @@ class StripeWH_Handler:
             intent.latest_charge
         )
 
-        billing_details = stripe_charge.billing_details  # updated
+        billing_details = stripe_charge.billing_details  # updated from CI
         shipping_details = intent.shipping
-        grand_total = round(stripe_charge.amount / 100, 2)  # updated
+        grand_total = round(stripe_charge.amount / 100, 2)  # updated from CI
 
         # Clean data in the shipping details
         for field, value in shipping_details.address.items():
