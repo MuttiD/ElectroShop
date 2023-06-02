@@ -24,7 +24,7 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
             'save_info': request.POST.get('save_info'),
-            'username': request.user.username,                  # modified according to tutoring
+            'username': request.user  #.username,                  # modified according to tutoring
         })
         return HttpResponse(status=200)
     except Exception as e:
@@ -85,7 +85,6 @@ def checkout(request):
                 Please double check your information')
 
     else:
-
         bag = request.session.get('bag', {})
         if not bag:
             messages.error(request, "There's nothing in your bag at the moment")

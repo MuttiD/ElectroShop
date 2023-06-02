@@ -1,0 +1,1 @@
+[{"model": "products.category", "pk": 1, "fields": {"name": "Components", "friendly_name": "Components"}}, {"model": "products.category", "pk": 2, "fields": {"name": "Boards", "friendly_name": "Boards"}}, {"model": "products.category", "pk": 3, "fields": {"name": "special_offers", "friendly_name": "Special Offers"}}]

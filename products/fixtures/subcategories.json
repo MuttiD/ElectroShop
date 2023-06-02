@@ -1,0 +1,83 @@
+[
+    {
+       "model":"products.subcategory",
+       "pk":1,
+       "fields":{
+          "name":"microchips",
+          "friendly_name":"Microchips",
+          "category": 1
+       }
+    },
+    {
+       "model":"products.subcategory",
+       "pk":2,
+       "fields":{
+          "name":"capacitors",
+          "friendly_name":"Capacitors",
+          "category": 1
+       }
+    },
+    {
+        "model":"products.subcategory",
+        "pk":3,
+        "fields":{
+           "name":"connectors",
+           "friendly_name":"Connectors",
+           "category": 1
+        }
+     },
+     {
+        "model":"products.subcategory",
+        "pk":4,
+        "fields":{
+           "name":"motherboards",
+           "friendly_name":"Motherboards",
+           "category": 2
+        }
+     },
+     {
+        "model":"products.subcategory",
+        "pk":5,
+        "fields":{
+           "name":"raspberry_pi",
+           "friendly_name":"Raspberry Pi",
+           "category": 2
+        }
+     },
+     {
+        "model":"products.subcategory",
+        "pk":6,
+        "fields":{
+           "name":"video_boards",
+           "friendly_name":"Video Boards",
+           "category": 2
+        }
+     },
+     {
+        "model":"products.subcategory",
+        "pk":7,
+        "fields":{
+           "name":"deals",
+           "friendly_name":"Deals",
+           "category": 3
+        }
+     },
+     {
+        "model":"products.subcategory",
+        "pk":8,
+        "fields":{
+           "name":"new_arrivals",
+           "friendly_name":"New Arrivals",
+           "category": 3
+        }
+     },
+     {
+        "model":"products.subcategory",
+        "pk":9,
+        "fields":{
+           "name":"clearance",
+           "friendly_name":"Clearance",
+           "category": 3
+        }
+     }
+ ]
