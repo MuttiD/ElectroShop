@@ -42,7 +42,15 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             # filter the category & name IN the categories list
             products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=categories)
+            categories = Category.objects.filter(name__in=[str(categories) for category in categories])
+
+        if 'subcategory' in request.GET:
+            subcategories = request.GET.getlist('subcategory')
+
+            categories = Category.objects.filter(subcategory__name__in=subcategories).distinct()
+            subcategories = SubCategory.objects.filter(name__in=subcategories)
+
+            products = products.filter(subcategory__name__in=subcategories.values('name'))
 
         if 'q' in request.GET:
             query = request.GET['q']

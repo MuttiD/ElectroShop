@@ -24,7 +24,7 @@ def cache_checkout_data(request):
         stripe.PaymentIntent.modify(pid, metadata={
             'bag': json.dumps(request.session.get('bag', {})),
             'save_info': request.POST.get('save_info'),
-            'username': request.user  #.username,                  # modified according to tutoring
+            'username': request.user,  #.username,                  # modified according to tutoring
         })
         return HttpResponse(status=200)
     except Exception as e:
@@ -77,7 +77,7 @@ def checkout(request):
                     return redirect(reverse('view_bag'))
 
             # Save the info to the user's profile if all is well
-            request.session['save_info'] = 'save-info' in request.POST
+            request.session['save_info'] = 'save_info' in request.POST
             # Redirect to a new success file
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:

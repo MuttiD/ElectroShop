@@ -33,7 +33,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'app-electro.herokuapp.com', 'localhost',
-    '8000-muttid-electroshop-coaba024szp.ws-eu98.gitpod.io'
+    '8000-muttid-electroshop-coaba024szp.ws-eu98.gitpod.io',
     ]
 
 

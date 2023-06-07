@@ -274,3 +274,63 @@ input[name='q']::placeholder {
         height: calc(100vh - 116px);
     }
 }
+
+/* footer  */
+footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    background-color: #8b8bd3;
+    color: #383838;
+    box-shadow: 0 50vh 0 50vh #8b8bd3;
+}
+
+.footer-div {
+    padding: 2rem 1rem;
+}
+
+.footer-div>.row .col-12 {
+    padding-left: 0;
+}
+
+.footer-list-links {
+    list-style-type: none;
+    margin: 0;
+    padding-inline-start: 0;
+    overflow: hidden;
+    background-color: #8b8bd3;
+}
+
+.footer-list-links li {
+    float: left;
+}
+
+.footer-list-links li a {
+    display: block;
+    color: #383838;
+    text-align: left;
+    padding: 1rem;
+    text-decoration: none;
+}
+
+.footer-list-socials {
+    padding-inline-start: 0;
+}
+
+.footer-list-socials li {
+    display: inline-block;
+    text-align: center;
+}
+
+.social-media-icon i {
+    font-size: 2.5rem;
+    color: #242349;
+    margin-right: 1.5rem;
+}
+
+.footer-developer {
+    display: contents;
+    text-align: center;
+    font-size: 1rem;
+    color: #eeeaea;
+}

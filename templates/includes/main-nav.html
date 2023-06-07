@@ -24,10 +24,10 @@
                 Components 
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="components-link">
-                <a href="{% url 'products' %}?category=microchips" class="dropdown-item">Microchips</a>
-                <a href="{% url 'products' %}?category=capacitors" class="dropdown-item">Capacitors</a>
-                <a href="{% url 'products' %}?category=connectors" class="dropdown-item">Connectors</a>
-                <a href="{% url 'products' %}?category=microchips,capacitors,connectors" class="dropdown-item">All Components</a>
+                <a href="{% url 'products' %}?subcategory=microchips" class="dropdown-item">Microchips</a>
+                <a href="{% url 'products' %}?subcategory=capacitors" class="dropdown-item">Capacitors</a>
+                <a href="{% url 'products' %}?subcategory=connectors" class="dropdown-item">Connectors</a>
+                <a href="{% url 'products' %}?subcategory=microchips,capacitors,connectors" class="dropdown-item">All Components</a>
             </div>
         </li>
 
@@ -37,10 +37,10 @@
                 Boards
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="boards-link">
-                <a href="{% url 'products' %}?category=motherboards" class="dropdown-item">Motherboards</a>
-                <a href="{% url 'products' %}?category=raspberry_pi" class="dropdown-item">Raspberry Pi</a>
-                <a href="{% url 'products' %}?category=video_boards" class="dropdown-item">Video Boards</a>
-                <a href="{% url 'products' %}?category=motherboards,raspberry_pi,video_boards" class="dropdown-item">All Boards</a>
+                <a href="{% url 'products' %}?subcategory=motherboards" class="dropdown-item">Motherboards</a>
+                <!-- <a href="{% url 'products' %}?subcategory=raspberry_pi" class="dropdown-item">Raspberry Pi</a>  -->
+                <a href="{% url 'products' %}?subcategory=video_boards" class="dropdown-item">Video Boards</a>
+                <a href="{% url 'products' %}?subcategory=motherboards,raspberry_pi,video_boards" class="dropdown-item">All Boards</a>
             </div>
         </li>
 
@@ -50,10 +50,10 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?category=clearence" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?category=all_specials" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?subcategory=new_arrivals" class="dropdown-item">New Arrivals</a>
+                <a href="{% url 'products' %}?subcategory=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products' %}?subcategory=clearence" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?subcategory=all_specials" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
