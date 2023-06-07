@@ -293,26 +293,6 @@ footer {
     padding-left: 0;
 }
 
-.footer-list-links {
-    list-style-type: none;
-    margin: 0;
-    padding-inline-start: 0;
-    overflow: hidden;
-    background-color: #8b8bd3;
-}
-
-.footer-list-links li {
-    float: left;
-}
-
-.footer-list-links li a {
-    display: block;
-    color: #383838;
-    text-align: left;
-    padding: 1rem;
-    text-decoration: none;
-}
-
 .footer-list-socials {
     padding-inline-start: 0;
 }
@@ -333,4 +313,30 @@ footer {
     text-align: center;
     font-size: 1rem;
     color: #eeeaea;
+}
+
+/* Mailchimp style */
+#mc_embed_signup {
+    background: #fff;
+    clear: left;
+    font: 1rem Open Sans, sans-serif;
+    max-width: 600px;
+}
+
+#mc_embed_signup h2 {
+    color: green;
+    font-size: 2em;
+}
+
+#mc_embed_signup .button {
+    background-color: green;    
+    border-radius: 0;
+}
+
+.mailchimp-disclaimer-text {
+    font-size: 0.875rem;
+}
+
+.asterisk {
+    color: #351c75!important;
 }
