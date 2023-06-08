@@ -28,12 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-# DEBUG = 'DEVELOPMENT' in os.environ
+
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
     'app-electro.herokuapp.com', 'localhost',
     '8000-muttid-electroshop-coaba024szp.ws-eu98.gitpod.io',
+    '8000-muttid-electroshop-coaba024szp.ws-eu99.gitpod.io'
     ]
 
 
