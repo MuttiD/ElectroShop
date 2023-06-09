@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans '404 Error' %}{% endblock %}
+{% block content %}
+
+<!-- Details of 404 error and button to navigate to home -->
+<div class="container mt-5 pt-5">
+    <div class="row pt-lg-2 d-none d-lg-flex">
+        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-md-left">
+            <h2 class="mt-5 pt-5">
+                404 Page Error
+            </h2>
+            <hr class="">
+                <div>
+                <p>Whoops! We can't find that page.<br>
+                Why not checking out our products?</p>
+                </div>
+            <br>
+            <div>
+                <a class="btn btn-dark mb-3" href="{% url 'home' %}" role="button">Go to homepage</a>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
