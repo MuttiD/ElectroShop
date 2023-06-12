@@ -67,6 +67,7 @@
                 </a>                
             </div>
 
+            <!-- Nav Bar -->
             <!-- Search field -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">    <!-- submit the search to the products view -->
@@ -97,18 +98,17 @@
 
                         <!-- Request for login -->
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                            {% if request.user.is.authenticated %}
-                                <!-- User is a superuser -->
-                                {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
-                                {% endif %}
-                                <!-- otherwise -->
-                                <a href="% url 'profile' %" class="dropdown-item">My Profile</a>
+                            {% if request.user.is.authenticated %}                                                            
+                                <a href="% url 'profile' %" class="dropdown-item" aria-label="Access my profile">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             <!-- For user still not authenticated -->
                             {% else  %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item" aria-label="Register">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item" aria-label="Login">Login</a>
+                            {% endif %}
+                            <!-- User is a superuser -->
+                            {% if request.user.is_superuser %}
+                                <a href="" class="dropdown-item" aria-label="Add products page">Add Product</a>
                             {% endif %}
                         </div>
                     </li>
