@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
+import os
 from pathlib import Path
 
-import os
 import dj_database_url
 if os.path.exists("env.py"):
     import env
@@ -33,7 +33,8 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = [
     'app-electro.herokuapp.com', 'localhost',
     '8000-muttid-electroshop-coaba024szp.ws-eu98.gitpod.io',
-    '8000-muttid-electroshop-coaba024szp.ws-eu99.gitpod.io'
+    '8000-muttid-electroshop-coaba024szp.ws-eu99.gitpod.io',
+    '8000-muttid-electroshop-coaba024szp.ws-eu104.gitpod.io',
     ]
 
 
