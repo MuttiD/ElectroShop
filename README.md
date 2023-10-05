@@ -266,6 +266,8 @@ In GitPod:
 
 * [Leather Works](https://github.com/LauraMayock/Leather-works-sustainable-products) project by colleague Laura Mayock for README file template.
 
+* [Farnell Electronics](https://ie.farnell.com/) webpage for inspiration of the project.
+
 * [pexel](https://www.pexels.com/) and [pixabay](https://pixabay.com/) for sourcing free images.
 
 

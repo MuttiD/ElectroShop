@@ -11,25 +11,63 @@
 
 {% block content %}
     <!-- defining layouts and grids -->
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-7 col-md-6 my-auto"></div>
+    <div class="container">
+        <div class="row h-100 justify-content-end">
+            <div class="col-7 col-md-6 my-auto">
                 <h1 class="display-4 logo-font text-black">
-                    We're more than electronics
+                    We're more than electronics !
                 </h1>
-                <div class="my-5">
-                    <h4>
-                        <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">See our products</a>
-                    </h4>
+            </div>         
+        </div>        
+    </div>
+
+    <!-- Products List & Small Images -->
+    <div class="container">
+      <div style="position:relative; z-index: 1;">
+        <div class="row bg-full-width-inner h-100 justify-content-end">
+          <ul class="nav mega-menu small-padding-top-md">
+            <li class="automation-menu smaller-margin">
+              <a href="#" data-menuid="" data-di-id="">
+                <div class="">
+                  <img src="">
                 </div>
+                <p class="">All Products</p>
+              </a>
+            </li>
+            <li class="automation-menu smaller-margin">
+              <a href="#" data-menuid="" data-di-id="">
+                <div class="">
+                  <img src="">
+                </div>
+                <p class="">Components</p>
+              </a>
+            </li>
+            <li class="automation-menu smaller-margin">
+              <a href="#" data-menuid="" data-di-id="">
+                <div class="">
+                  <img src="">
+                </div>
+                <p class="">Boards</p>
+              </a>
+            </li>
+            <li class="automation-menu smaller-margin">
+              <a href="#" data-menuid="" data-di-id="">
+                <div class="">
+                  <img src="">
+                </div>
+                <p class="">Special Offers</p>
+              </a>
+            </li> 
+          </ul>
         </div>
+      </div>
     </div>
 
 
 <!-- Newsletter section -->
 <section class="homepage-newsletter-section">
     <div class="container">
-      <div class="row justify-content-center">
+      <div class="row justify-content-end">
         <!-- Begin Mailchimp Signup Form -->
         <div id="mc_embed_signup" class="col">
           <form
@@ -56,10 +94,13 @@
               <div class="optionalParent">
                 <div class="clear foot">
                   <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                  <p class="brandingLogo"><a href="http://eepurl.com/iaNIen"
+                  <p class="brandingLogo">
+                    <a href="http://eepurl.com/iaNIen"
                       title="Mailchimp - email marketing made easy and fun"><img
                         src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"
-                        alt="mailchimp brand logo"></a></p>
+                        alt="mailchimp brand logo">
+                    </a>
+                  </p>
                 </div>
               </div>
               <p class="text-muted mailchimp-disclaimer-text mt-2 mb-2">By submitting your details you agree to sign up to
@@ -91,6 +132,6 @@
         <!--End mc_embed_signup-->
       </div>
     </div>
-  </section>
+</section>
 
 {% endblock %}

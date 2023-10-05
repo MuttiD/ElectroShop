@@ -6,8 +6,10 @@
             <p class="my-0">Search</p>
         </div>
     </a>
+
+    <!-- submit search query to the products url -->
     <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-        <form class="form" method="GET" action="{% url 'products' %}">  <!-- submit search query to the products url -->
+        <form class="form" method="GET" action="{% url 'products' %}">  
             <div class="input-group w-100">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
                 <div class="input-group-append">
@@ -41,6 +43,8 @@
         {% endif %}
     </div>
 </li>
+
+<!-- access the shopping bag -->
 <li class="list-inline-item">
     <a class="{% if grand_total %}text-primary font-weight-bold
               {% else %}text-black

@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     '8000-muttid-electroshop-coaba024szp.ws-eu98.gitpod.io',
     '8000-muttid-electroshop-coaba024szp.ws-eu99.gitpod.io',
     '8000-muttid-electroshop-coaba024szp.ws-eu104.gitpod.io',
+    '8000-muttid-electroshop-coaba024szp.ws-eu105.gitpod.io',
     ]
 
 
