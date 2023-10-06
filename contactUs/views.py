@@ -1,30 +1,18 @@
 from django.shortcuts import render
 from django.views.generic import CreateView, View, FormView
+from django.contrib.messages.views import SuccessMessageMixin
 from .forms import ContactForm
 
 
-class ContactView(FormView):
+class ContactView(SuccessMessageMixin, FormView):
     """"
     A class based view to render Contacts
     """
     form_class = ContactForm
-    template_name = 'contact_us.html'
-    success_url = '/success'
+    template_name = 'contactUs/contact_us.html'
+    success_url = '/'
+    success_message = "Thanks for contacting us. We will reply to you shortly"
 
     def get(self, request):
         form = ContactForm()
-        return render(request, 'contact_us.html', {'form': form})
-
-    def post(self, request):
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('success')
-        return render(request, 'contact_us.html', {'form': form})
-
-
-def success(request):
-    """
-    A view to render the success of a contact submitted
-    """
-    return render(request, 'success.html')
+        return render(request, 'contactUs/contact_us.html', {'form': form})
