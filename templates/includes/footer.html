@@ -1,60 +1,67 @@
 <footer class="w-100">
-    <div class="container footer-div">
-        <div class="row">
-            <!-- Useful Pages List -->
-            <div class="col-sm-8 row justify-content-start">
-                <div class="row footer-developer">
-                    <p>
-                        <a href="https://danielmutti.com">
-                            Daniel Mutti | Web Developer
-                        </a>           
-                    </p>
-                </div>                
-            </div> 
-            <!-- GDPR link -->
-            <div class="row">
+    <div class="container footer-div">        
+        <!-- Useful Pages List -->
+        <div class="col-sm-8 row justify-content-start">
+            <div class=" row footer-developer">                
                 <p>
-                    <a href="https://www.privacypolicygenerator.info/live.php?token=NXFGH0TllxDkZGFfBa7pNnyoxlokp2D7" target="_blank">Privacy Policy</a>
+                    <a href="https://danielmutti.com">
+                        Daniel Mutti | Web Developer
+                    </a>           
                 </p>
-            </div>
-            <!-- Back to Top Button -->
-            <a href="#top" class="top-of-site-link" data-visible="true">
-                <span class="screen-reader-text"></span>
-                <svg width="32" height="32" viewBox="0 0 100 100">
-                    <path fill="green" d="m50 0c-13.262 0-25.98 5.2695 -35.355 14.645s -14.645 22.094 -14.645 35.355s 5.2695 25.98 14.645 35.355s 
-                                             22.094 14.645 35.355 14.645s 25.98 -5.2695 35.355 -14.645s 14.645 -22.094 14.645 -35.355s -5.2695 
-                                             -25.98 -14.645 -35.355s -22.094 -14.645 -35.355 -14.645Zm20.832 62.5l -20.832 -22.457l -20.625 22.457c
-                                             -1.207 0.74219 -2.7656 0.57812 -3.7891 -0.39844c -1.0273 -0.98047 -1.2695 -2.5273 -0.58594 -3.7695l 
-                                             22.918 -25c 0.60156 -0.61328 1.4297 -0.96094 2.2891 -0.96094c 0.86328 0 1.6914 0.34766 2.293 0.96094l
-                                             22.918 25c 0.88672 1.2891 0.6875 3.0352 -0.47266 4.0898c -1.1562 1.0508 -2.9141 1.0859 -4.1133 0.078125z">
-                    </path>
-                </svg>
-            </a>
-            <!-- Social Media -->
-            <div class="col-6 col-sm-4">
-                <ul class="footer-list-socials">
-                    <li class="footer-item">
-                        <a href="https://www.facebook.com/Electronics-Shop-117973601316458" aria-label="Facebook page" target="_blank"
-                            class="social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="https://instagram.com" aria-label="Go to our Instagram page" target="_blank"
-                            class="social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="https://twitter.com" aria-label="Go to our Twitter feed" target="_blank"
-                            class="social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-square-x-twitter"></i>
-                        </a>
-                    </li>
-                    <li class="footer-item">
-                        <a href="https://youtube.com" aria-label="Go to our YouTube page" target="_blank"
-                            class="social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-youtube"></i>
-                        </a>
-                    </li>                    
-                </ul>
-            </div>            
+            </div>                                            
         </div>
+        <div class="col-sm-8 row justify-content-start">
+            <div class=" row footer-developer">            
+                <p>
+                    <a href="{% url 'contact_us' %}">
+                        Contact Us
+                    </a>           
+                </p>            
+            </div>                
+        </div> 
+        <!-- GDPR link -->
+        <div class="row justify-content-end">
+            <p>
+                <a href="https://www.privacypolicygenerator.info/live.php?token=NXFGH0TllxDkZGFfBa7pNnyoxlokp2D7" target="_blank">Privacy Policy</a>
+            </p>
+        </div>
+        <!-- Back to Top Button -->
+        <a href="#top" class="top-of-site-link" data-visible="true">
+            <span class="screen-reader-text"></span>
+            <svg width="32" height="32" viewBox="0 0 100 100">
+                <path fill="green" d="m50 0c-13.262 0-25.98 5.2695 -35.355 14.645s -14.645 22.094 -14.645 35.355s 5.2695 25.98 14.645 35.355s 
+                                            22.094 14.645 35.355 14.645s 25.98 -5.2695 35.355 -14.645s 14.645 -22.094 14.645 -35.355s -5.2695 
+                                            -25.98 -14.645 -35.355s -22.094 -14.645 -35.355 -14.645Zm20.832 62.5l -20.832 -22.457l -20.625 22.457c
+                                            -1.207 0.74219 -2.7656 0.57812 -3.7891 -0.39844c -1.0273 -0.98047 -1.2695 -2.5273 -0.58594 -3.7695l 
+                                            22.918 -25c 0.60156 -0.61328 1.4297 -0.96094 2.2891 -0.96094c 0.86328 0 1.6914 0.34766 2.293 0.96094l
+                                            22.918 25c 0.88672 1.2891 0.6875 3.0352 -0.47266 4.0898c -1.1562 1.0508 -2.9141 1.0859 -4.1133 0.078125z">
+                </path>
+            </svg>
+        </a>
+        <!-- Social Media -->
+        <div class="col-6 col-sm-4">
+            <ul class="footer-list-socials">
+                <li class="footer-item">
+                    <a href="https://www.facebook.com/Electronics-Shop-117973601316458" aria-label="Facebook page" target="_blank"
+                        class="social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-facebook"></i>
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="https://instagram.com" aria-label="Go to our Instagram page" target="_blank"
+                        class="social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="https://twitter.com" aria-label="Go to our Twitter feed" target="_blank"
+                        class="social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-square-x-twitter"></i>
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="https://youtube.com" aria-label="Go to our YouTube page" target="_blank"
+                        class="social-media-icon" rel="noopener noreferer"><i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>                    
+            </ul>
+        </div>        
     </div>
 </footer>
