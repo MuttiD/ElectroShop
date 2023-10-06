@@ -49,7 +49,7 @@ div#mc_embed_signup {
 /* Buttons */
 
 .shop-now-button {
-    background: black;
+    background: #5cae5b;
     color: white;
     min-width: 260px;
 }
@@ -83,7 +83,7 @@ div#mc_embed_signup {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #5cae5b;
     color: white;
 }
 
