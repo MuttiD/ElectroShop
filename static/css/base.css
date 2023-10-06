@@ -4,10 +4,20 @@ html {
 
 body {
     background: url('/media/homepage-background.jpg') no-repeat center center fixed;
-    background-size: cover;
-    height: calc(100vh - 164px);
+    background-size: cover;  
+    height: 100%;  
     color: #555;
     font-family: 'Share Tech', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto
+}
+
+header {
+    z-index: 1030;
 }
 
 /* from Bulma */
@@ -29,6 +39,10 @@ body {
 
 /* main nav background */
 .bgr {
+    background-color: #e8e8e8;
+}
+
+div#mc_embed_signup {
     background-color: #e8e8e8;
 }
 
@@ -258,12 +272,11 @@ input[name='q']::placeholder {
 
 /* footer  */
 footer {
-    position: relative;
-    bottom: 0;
-    left: 0;
+    flex-shrink: 0;
     background-color: #e8e8e8;
     color: #383838;
     box-shadow: 0 50vh 0 50vh #e8e8e8;
+    z-index: 999;
 }
 
 .footer-div {
@@ -354,10 +367,6 @@ footer {
         right: 0;
         left: 0;
         z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 164px;
     }
 }
 

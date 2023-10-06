@@ -57,7 +57,7 @@
   <body>
     
     <!-- Header -->
-    <header class="container-fluid fixed-top">                
+    <header class="container-fluid">                
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             
             <!-- Page title -->
@@ -174,9 +174,12 @@
     {% block page_header %}
     {% endblock %}
 
+    <main>
+    
     {% block content %}
     {% endblock %}
 
+    </main>
     <!-- Footer for all pages -->
     {% include 'includes/footer.html' %}
 
