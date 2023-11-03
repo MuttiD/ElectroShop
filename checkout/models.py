@@ -10,6 +10,9 @@ from profiles.models import UserProfile
 
 
 class Order(models.Model):
+    """
+    A Class for Order Functionalities
+    """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL,
                                      null=True, blank=True,
@@ -67,6 +70,9 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """
+    A Class for Line Items 
+    """
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)

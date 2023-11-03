@@ -3,6 +3,9 @@ from .models import Category, SubCategory, Product
 
 
 class ProductAdmin(admin.ModelAdmin):
+    """
+    A Class to handle Products in Django Admin
+    """
     list_display = (
         'sku',
         'name',
@@ -16,6 +19,9 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """
+    A Class to handle Categories in Django Admin
+    """
     list_display = (
         'friendly_name',
         'name',
@@ -23,6 +29,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 class SubCategoryAdmin(admin.ModelAdmin):
+    """
+    A Class to handle Sub Categories in Django Admin
+    """
     list_display = (
         'friendly_name',
         'name',
