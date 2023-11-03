@@ -100,6 +100,39 @@
             </div>
         </div>        
     </div>
+
+<!-- Display comments -->
+<div class="comments">
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <p>{{ comment.user.username }} said:</p>
+                <p>{{ comment.text }}</p>
+                <p>Posted on: {{ comment.created_at }}</p>
+                {% if user.is_authenticated and user == comment.user %}
+                    <a href="{% url 'update_comment' comment.id %}">Edit</a>
+                    <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- Add a new comment form -->
+{% if user.is_authenticated %}
+    <div class="add-comment">
+        <h2>Add a Comment</h2>
+        <form method="post" action="{% url 'add_comment' product.id %}">
+            {% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit">Add Comment</button>
+        </form>
+    </div>
+{% else %}
+    <p>Please <a href="{% url 'login' %}">log in</a> to leave a comment.</p>
+{% endif %}
+
 {% endblock %}
 
 {% block postloadjs %}

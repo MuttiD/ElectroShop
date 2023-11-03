@@ -17,7 +17,7 @@ main {
 }
 
 header {
-    z-index: 1030;
+    z-index: 800;
 }
 
 /* from Bulma */
@@ -80,11 +80,17 @@ div#mc_embed_signup {
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
+.btn-green:hover,
+.btn-green:active,
+.btn-green:focus {
     background: #5cae5b;
     color: white;
+}
+
+.prods {
+    margin-top: 3rem;
+    margin-bottom: 20rem;
+    padding: 20px 28px;    
 }
 
 /* Texts */
@@ -331,12 +337,12 @@ footer {
 }
 
 #mc_embed_signup h2 {
-    color: green;
+    color: #5cae5b;
     font-size: 2em;
 }
 
 #mc_embed_signup .button {
-    background-color: green;    
+    background-color: #5cae5b;    
     border-radius: 0;
 }
 

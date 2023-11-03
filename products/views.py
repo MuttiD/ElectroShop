@@ -3,10 +3,10 @@ from django.contrib import messages
 # 'Q' an object to generate search queries. either product name or description.
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category, SubCategory
-from .forms import ProductForm
-
-# Create your views here.
+from .models import Product, Category, SubCategory, Comment
+from .forms import ProductForm, CommentForm
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 
 def all_products(request):
@@ -59,7 +59,8 @@ def all_products(request):
                 messages.error(request, "Please enter a search criteria.")
                 return redirect(reverse('products'))
 
-            # a query containing name OR description. 'i' means insentitive on typing
+            # a query containing name OR description.
+            # 'i' means insentitive on typing
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -80,14 +81,19 @@ def product_detail(request, product_id):
     """ A view to show details of products """
 
     product = get_object_or_404(Product, pk=product_id)
+    comments = product.comments.all()
 
     context = {
         'product': product,
+        'comments': comments,
+        # 'user': request.user,
+        # 'comment_form': CommentForm(),
     }
 
     return render(request, 'products/product_detail.html', context)
 
-# @login_required
+
+@login_required
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
@@ -104,10 +110,49 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
+
+
+@login_required
+def add_comment(request, product_id):
+    """ Handles the creating of comments by users """
+    product = get_object_or_404(Product, pk=product_id)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.user = request.user
+            comment.product = product
+            comment.save()
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False, 'errors': form.errors})
+
+@login_required
+def update_comment(request, comment_id):
+    """ Handles comments updates """
+    comment = get_object_or_404(Comment, pk=comment_id)
+    
+    if request.method == 'POST':
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            form.save()
+            return JsonResponse({'success': True})
+        else:
+            return JsonResponse({'success': False, 'errors': form.errors})
+
+@login_required
+def delete_comment(request, comment_id):
+    """ Handles deletion of comments """
+    comment = get_object_or_404(Comment, pk=comment_id)
+    
+    if request.method == 'POST':
+        comment.delete()
+        return JsonResponse({'success': True})
