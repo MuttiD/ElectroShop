@@ -86,8 +86,7 @@ def product_detail(request, product_id):
     context = {
         'product': product,
         'comments': comments,
-        # 'user': request.user,
-        # 'comment_form': CommentForm(),
+        'comment_form': CommentForm(),
     }
 
     return render(request, 'products/product_detail.html', context)
