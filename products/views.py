@@ -85,7 +85,7 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     comments = product.comments.all()
 
-    testimonials = product.testimonial_set.all()
+    testimonials = product.testimonials.all()
 
     context = {
         'product': product,

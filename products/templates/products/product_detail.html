@@ -151,7 +151,7 @@
     <div class="">
         <h2>Customer Testimonials</h2>
         <ul>
-            {% for testimonial in product.testimonial_set.all %}
+            {% for testimonial in product.testimonials.all %}
             <li>
                 <p><strong>{{ testimonial.name }}</strong></p>
                 <p>Posted Date: {{ testimonial.posted_date }}</p>
