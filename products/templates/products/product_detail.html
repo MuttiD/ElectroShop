@@ -132,6 +132,33 @@
     {% endif %}
 </div>
 
+
+<!-- Display Testimonials -->
+<div class="testimonials">
+    <h2>Customer Testimonials</h2>
+    <ul>
+        {% for testimonial in product.testimonial_set.all %}
+        <li>
+            <p><strong>{{ testimonial.name }}</strong></p>
+            <p>Posted Date: {{ testimonial.posted_date }}</p>
+            <p>Delivery Rating: {{ testimonial.delivery }}</p>
+            <p>Quality Rating: {{ testimonial.quality }}</p>
+            <p>Overall Rating: {{ testimonial.overall }}</p>
+            <blockquote>
+                {{ testimonial.review }}
+            </blockquote>
+        </li>
+        {% empty %}
+        <p>No customer testimonials available for this product.</p>
+        {% endfor %}
+    </ul>
+</div>
+
+<!-- Create Testimonial Button -->
+<div class="create-testimonial">
+    <a href="{% url 'create_testimonial' %}" class="btn btn-primary">Create Testimonial</a>
+</div>
+
 {% endblock %}
 
 {% block postloadjs %}

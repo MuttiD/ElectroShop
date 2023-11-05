@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Testimonials</title>
+    <!-- Include any necessary CSS styles or external CSS files here -->
+</head>
+<body>
+    <h1>Customer Testimonials</h1>
+    <ul>
+        {% for testimonial in testimonials %}
+            <li>
+                <blockquote>
+                    {{ testimonial.review|safe }}
+                </blockquote>
+                <p><strong>Author: {{ testimonial.name }}</strong></p>
+                <p>Posted Date: {{ testimonial.posted_date }}</p>
+                <p>Delivery Rating: {{ testimonial.delivery }}</p>
+                <p>Quality Rating: {{ testimonial.quality }}</p>
+                <p>Overall Rating: {{ testimonial.overall }}</p>
+            </li>
+        {% empty %}
+            <p>No customer testimonials available.</p>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'create_testimonial' %}">Create Testimonial</a>
+
+    <!-- Include any necessary JavaScript or external JS files here -->
+</body>
+</html>
+
