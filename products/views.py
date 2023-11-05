@@ -1,12 +1,16 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib import messages
-# 'Q' an object to generate search queries. either product name or description.
+from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Product, Category, SubCategory, Comment
-from .forms import ProductForm, CommentForm
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+# from django.http import JsonResponse
+
+from .models import Product, Category, SubCategory, Comment
+from testimonials.models import Testimonial
+from .forms import ProductForm, CommentForm
+from testimonials.forms import TestimonialForm
 
 
 def all_products(request):
@@ -59,8 +63,6 @@ def all_products(request):
                 messages.error(request, "Please enter a search criteria.")
                 return redirect(reverse('products'))
 
-            # a query containing name OR description.
-            # 'i' means insentitive on typing
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -83,10 +85,14 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     comments = product.comments.all()
 
+    testimonials = product.testimonial_set.all()
+
     context = {
         'product': product,
         'comments': comments,
         'comment_form': CommentForm(),
+        'testimonials': testimonials,
+        'testimonial_form': TestimonialForm(),
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -118,6 +124,12 @@ def add_product(request):
     return render(request, template, context)
 
 
+class CustomSuccessMessageMixin(SuccessMessageMixin):
+    """ A Class to handle success messages """
+
+    success_message = ""
+
+
 @login_required
 def add_comment(request, product_id):
     """ Handles the creating of comments by users """
@@ -130,9 +142,10 @@ def add_comment(request, product_id):
             comment.user = request.user
             comment.product = product
             comment.save()
-            return JsonResponse({'success': True})
+            messages.success(request, 'Comment added successfully')
+            return HttpResponseRedirect(reverse('product_detail', args=[product.id]))
         else:
-            return JsonResponse({'success': False, 'errors': form.errors})
+            messages.error(request, 'Comment creation failed. Please check the form.')
 
 @login_required
 def update_comment(request, comment_id):
@@ -143,9 +156,12 @@ def update_comment(request, comment_id):
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
-            return JsonResponse({'success': True})
+            messages.success(request, 'Comment updated successfully')
+            return HttpResponseRedirect(reverse('product_detail', args=[comment.product.id]))
         else:
-            return JsonResponse({'success': False, 'errors': form.errors})
+            messages.error(request, 'Comment update failed. Please check the form.')
+
+    return redirect(reverse('product_detail', args=[comment.product.id]))
 
 @login_required
 def delete_comment(request, comment_id):
@@ -154,4 +170,7 @@ def delete_comment(request, comment_id):
     
     if request.method == 'POST':
         comment.delete()
-        return JsonResponse({'success': True})
+        messages.success(request, 'Comment deleted successfully')
+
+    return redirect(reverse('product_detail', args=[comment.product.id]))
+

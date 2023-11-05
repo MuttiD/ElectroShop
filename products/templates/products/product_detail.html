@@ -100,7 +100,7 @@
     </div>
 
     <!-- Display comments -->
-    <div class="comments">
+    <div class="">
         <h2>Comments</h2>
         <ul>
             {% for comment in comments %}
@@ -109,8 +109,21 @@
                 <p>{{ comment.text }}</p>
                 <p>Posted on: {{ comment.created_at }}</p>
                 {% if user.is_authenticated and user == comment.user %}
-                <a href="{% url 'update_comment' comment.id %}">Edit</a>
-                <a href="{% url 'delete_comment' comment.id %}">Delete</a>
+                    <!-- Update comment -->
+                    <form method="post" action="{% url 'update_comment' comment.id %}">
+                        {% csrf_token %}
+                    
+                        {{ comment_form.text.label_tag }}
+                        {{ comment_form.text }}
+                        
+                        <button type="submit">Update Comment</button>
+                    </form>
+                    <!-- Delete a comment -->
+                    <form method="post" action="{% url 'delete_comment' comment.id %}">
+                        {% csrf_token %}
+                        <button type="submit">Delete Comment</button>
+                    </form>
+                
                 {% endif %}
             </li>
             {% endfor %}
@@ -128,35 +141,38 @@
         </form>
     </div>
     {% else %}
-    <p>Please <a href="{% url 'login' %}">log in</a> to leave a comment.</p>
+    <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
     {% endif %}
-</div>
 
 
-<!-- Display Testimonials -->
-<div class="testimonials">
-    <h2>Customer Testimonials</h2>
-    <ul>
-        {% for testimonial in product.testimonial_set.all %}
-        <li>
-            <p><strong>{{ testimonial.name }}</strong></p>
-            <p>Posted Date: {{ testimonial.posted_date }}</p>
-            <p>Delivery Rating: {{ testimonial.delivery }}</p>
-            <p>Quality Rating: {{ testimonial.quality }}</p>
-            <p>Overall Rating: {{ testimonial.overall }}</p>
-            <blockquote>
-                {{ testimonial.review }}
-            </blockquote>
-        </li>
-        {% empty %}
-        <p>No customer testimonials available for this product.</p>
-        {% endfor %}
-    </ul>
-</div>
+    
 
-<!-- Create Testimonial Button -->
-<div class="create-testimonial">
-    <a href="{% url 'create_testimonial' %}" class="btn btn-primary">Create Testimonial</a>
+    <!-- Display Testimonials -->
+    <div class="">
+        <h2>Customer Testimonials</h2>
+        <ul>
+            {% for testimonial in product.testimonial_set.all %}
+            <li>
+                <p><strong>{{ testimonial.name }}</strong></p>
+                <p>Posted Date: {{ testimonial.posted_date }}</p>
+                <p>Delivery Rating: {{ testimonial.delivery }}</p>
+                <p>Quality Rating: {{ testimonial.quality }}</p>
+                <p>Overall Rating: {{ testimonial.overall }}</p>
+                <blockquote>
+                    {{ testimonial.review }}
+                </blockquote>
+            </li>
+            {% empty %}
+            <p>No customer testimonials available for this product.</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- Create Testimonial Button -->
+    <div class="create-testimonial">
+        <a href="{% url 'create_testimonial' %}" class="btn btn-primary">Create Testimonial</a>
+    </div>
+
 </div>
 
 {% endblock %}
