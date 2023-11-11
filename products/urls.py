@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from testimonials.views import CreateTestimonial
 
 urlpatterns = [
     path('', views.all_products, name='products'),
@@ -8,4 +9,6 @@ urlpatterns = [
     path('add_comment/<int:product_id>/', views.add_comment, name='add_comment'),
     path('update_comment/<int:comment_id>/', views.update_comment, name='update_comment'),
     path('delete_comment/<int:comment_id>/', views.delete_comment, name='delete_comment'),
+    # path('create_testimonial/<int:product_id>/', CreateTestimonial.as_view(), name='create_testimonial'),
+
 ]

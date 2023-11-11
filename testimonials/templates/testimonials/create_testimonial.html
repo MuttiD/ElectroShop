@@ -6,8 +6,11 @@
 </head>
 <body>
     <h1>Create Testimonial</h1>
-    <form method="post" action="{% url 'create_testimonial' %}">
+    <form method="post" action="{% url 'create_testimonial' product.id %}">
         {% csrf_token %}
+        <input type="hidden" name="product_id" value="{{ product.id }}">
+
+
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" required><br>
 
