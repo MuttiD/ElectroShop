@@ -36,6 +36,7 @@ ALLOWED_HOSTS = [
     '8000-muttid-electroshop-coaba024szp.ws-eu99.gitpod.io',
     '8000-muttid-electroshop-coaba024szp.ws-eu104.gitpod.io',
     '8000-muttid-electroshop-coaba024szp.ws-eu105.gitpod.io',
+    '8000-muttid-electroshop-coaba024szp.ws-eu106.gitpod.io',
     ]
 
 
@@ -231,7 +232,7 @@ if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'electroshop@example.com'
 else:
-    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
     EMAIL_HOST = 'smtp.gmail.com'
