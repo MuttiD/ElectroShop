@@ -144,12 +144,13 @@
     <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
     {% endif %}
 
-
-    
+   
 
     <!-- Display Testimonials -->
     <div class="">
         <h2>Customer Testimonials</h2>
+        <div>Product id = {{ product.id }}</div>
+        <div>Product Name = {{ product.name }}</div>
         <ul>
             {% for testimonial in product.testimonials.all %}
             <li>
@@ -158,9 +159,9 @@
                 <p>Delivery Rating: {{ testimonial.delivery }}</p>
                 <p>Quality Rating: {{ testimonial.quality }}</p>
                 <p>Overall Rating: {{ testimonial.overall }}</p>
-                <blockquote>
-                    {{ testimonial.review }}
-                </blockquote>
+                
+                <p>{{ testimonial.review }}</p>
+                
             </li>
             {% empty %}
             <p>No customer testimonials available for this product.</p>
@@ -170,6 +171,7 @@
 
     <!-- Create Testimonial Button -->
     <div class="">
+
         <a href="{% url 'create_testimonial' product.id %}" class="btn btn-primary">Create Testimonial</a>
     </div>
 

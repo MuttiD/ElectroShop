@@ -1,36 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Create Testimonial</title>
-    <!-- Include any necessary CSS styles or external CSS files here -->
-</head>
-<body>
-    <h1>Create Testimonial</h1>
-    <form method="post" action="{% url 'create_testimonial' product.id %}">
-        {% csrf_token %}
-        <input type="hidden" name="product_id" value="{{ product.id }}">
+{% extends 'base.html' %}
+{% load static %}
 
+{% block title %}Create Testimonial{% endblock %}
 
-        <label for="name">Your Name:</label>
-        <input type="text" id="name" name="name" required><br>
-
-        <label for="delivery">Delivery Rating:</label>
-        <input type="number" id="delivery" name="delivery" min="1" max="5" required><br>
-
-        <label for="quality">Quality Rating:</label>
-        <input type="number" id="quality" name="quality" min="1" max="5" required><br>
-
-        <label for="overall">Overall Rating:</label>
-        <input type="number" id="overall" name="overall" min="1" max="5" required><br>
-
-        <label for="review">Your Testimonial:</label>
-        <textarea id="review" name="review" rows="4" cols="50" required></textarea><br>
-
+{% block content %}
+    <form method="POST" enctype="multipart/form-data">
+        <h1>Create Testimonial</h1>
+        <div>Product id = {{ product.id }}</div>
+        <div>Product Name = {{ product.name }}</div>
+        {% csrf_token %} 
+        {{ form }}
+        {{ form.media }}
         <button type="submit">Submit</button>
     </form>
-    
-    <!-- Include any necessary JavaScript or external JS files here -->
-</body>
-</html>
-
-
+{% endblock %}

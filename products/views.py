@@ -5,7 +5,6 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
-# from django.http import JsonResponse
 
 from .models import Product, Category, SubCategory, Comment
 from testimonials.models import Testimonial
