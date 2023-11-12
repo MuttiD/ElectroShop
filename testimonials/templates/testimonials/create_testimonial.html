@@ -6,8 +6,8 @@
 {% block content %}
     <form method="POST" enctype="multipart/form-data">
         <h1>Create Testimonial</h1>
-        <div>Product id = {{ product.id }}</div>
-        <div>Product Name = {{ product.name }}</div>
+        <div>Product id = {{ product_id }}</div>
+        <div>Product Name = {{ product_name }}</div>
         {% csrf_token %} 
         {{ form }}
         {{ form.media }}

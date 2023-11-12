@@ -6,7 +6,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class Testimonial(models.Model):
     """ A class to handle Testimonials """
 
-    name = models.CharField(max_length=200, default="anonymous")
+    name = models.CharField(max_length=200, default="type your name")
     posted_date = models.DateTimeField(auto_now=True)
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='testimonials')
 
