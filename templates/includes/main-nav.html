@@ -27,7 +27,8 @@
                 <a href="{% url 'products' %}?subcategory=microchips" class="dropdown-item">Microchips</a>
                 <a href="{% url 'products' %}?subcategory=capacitors" class="dropdown-item">Capacitors</a>
                 <a href="{% url 'products' %}?subcategory=connectors" class="dropdown-item">Connectors</a>
-                <a href="{% url 'products' %}?subcategory=microchips,capacitors,connectors" class="dropdown-item">All Components</a>
+                <a href="{% url 'products' %}?category=Components" class="dropdown-item">All Components</a>
+                
             </div>
         </li>
 
@@ -38,9 +39,8 @@
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="boards-link">
                 <a href="{% url 'products' %}?subcategory=motherboards" class="dropdown-item">Motherboards</a>
-                <!-- <a href="{% url 'products' %}?subcategory=raspberry_pi" class="dropdown-item">Raspberry Pi</a>  -->
                 <a href="{% url 'products' %}?subcategory=video_boards" class="dropdown-item">Video Boards</a>
-                <a href="{% url 'products' %}?subcategory=motherboards,raspberry_pi,video_boards" class="dropdown-item">All Boards</a>
+                <a href="{% url 'products' %}?category=Boards" class="dropdown-item">All Boards</a>
             </div>
         </li>
 
@@ -52,8 +52,8 @@
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
                 <a href="{% url 'products' %}?subcategory=new_arrivals" class="dropdown-item">New Arrivals</a>
                 <a href="{% url 'products' %}?subcategory=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?subcategory=clearence" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?subcategory=all_specials" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?subcategory=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=special_offers" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
