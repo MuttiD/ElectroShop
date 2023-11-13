@@ -9,12 +9,12 @@
     <div class="col row justify-content-end">
         <form method="POST" enctype="multipart/form-data">
             <h1>Create Testimonial</h1>
-                <div>Product id = {{ product_id }}</div>
-                <div>Product Name = {{ product_name }}</div>
+                <div>Product id = {{ product.id }}</div>
+                <div>Product Name = {{ product.name }}</div>
             {% csrf_token %} 
             {{ form }}
             {{ form.media }}
-            <button type="submit">Submit</button>
+            <button class="btn btn-green rounded-0 mt-5" type="submit">Submit</button>
         </form>
     </div>
 </div>

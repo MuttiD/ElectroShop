@@ -89,7 +89,7 @@
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                            <input type="submit" class="btn btn-green rounded-0 text-uppercase mt-5" value="Add to Bag">
                         </div>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
                     </div>
@@ -116,12 +116,12 @@
                         {{ comment_form.text.label_tag }}
                         {{ comment_form.text }}
                         
-                        <button type="submit">Update Comment</button>
+                        <button class="btn-green" type="submit">Update Comment</button>
                     </form>
                     <!-- Delete a comment -->
                     <form method="post" action="{% url 'delete_comment' comment.id %}">
                         {% csrf_token %}
-                        <button type="submit">Delete Comment</button>
+                        <button class="btn-green" type="submit">Delete Comment</button>
                     </form>
                 
                 {% endif %}
@@ -137,7 +137,7 @@
         <form method="post" action="{% url 'add_comment' product.id %}">
             {% csrf_token %}
             {{ comment_form.as_p }}
-            <button type="submit">Add Comment</button>
+            <button class="btn-green" type="submit">Add Comment</button>
         </form>
     </div>
     {% else %}
@@ -147,33 +147,38 @@
    
 
     <!-- Display Testimonials -->
-    <div class="">
-        <h2>Customer Testimonials</h2>
-        <div>Product id = {{ product.id }}</div>
-        <div>Product Name = {{ product.name }}</div>
-        <ul>
-            {% for testimonial in product.testimonials.all %}
-            <li>
-                <p><strong>{{ testimonial.name }}</strong></p>
-                <p>Posted Date: {{ testimonial.posted_date }}</p>
-                <p>Delivery Rating: {{ testimonial.delivery }}</p>
-                <p>Quality Rating: {{ testimonial.quality }}</p>
-                <p>Overall Rating: {{ testimonial.overall }}</p>
-                
-                <p>{{ testimonial.review }}</p>
-                
-            </li>
-            {% empty %}
-            <p>No customer testimonials available for this product.</p>
-            {% endfor %}
-        </ul>
+    <div class="container">
+        <div class="row justify-content-right">
+            <div class="">
+                <span class="border border-primary">
+                    <h2>Customer Testimonials</h2>
+                    <div>Product id = {{ product.id }}</div>
+                    <div>Product Name = {{ product.name }}</div>
+                    <ul>
+                        {% for testimonial in product.testimonials.all %}
+                        <li>
+                            <p><strong>{{ testimonial.name }}</strong></p>
+                            <p>Posted Date: {{ testimonial.posted_date }}</p>
+                            <p>Delivery Rating: {{ testimonial.delivery }}</p>
+                            <p>Quality Rating: {{ testimonial.quality }}</p>
+                            <p>Overall Rating: {{ testimonial.overall }}</p>
+                            
+                            <p>{{ testimonial.review }}</p>
+                            
+                        </li>
+                        {% empty %}
+                        <p>No customer testimonials available for this product.</p>
+                        {% endfor %}
+                    </ul>
+                </span>
+            </div>
+        </div>
+        <!-- Create Testimonial Button -->
+        <div class="justify-content-center">
+            <a href="{% url 'create_testimonial' product.id %}" class="btn btn-primary">Create Testimonial</a>
+        </div>
     </div>
 
-    <!-- Create Testimonial Button -->
-    <div class="">
-
-        <a href="{% url 'create_testimonial' product.id %}" class="btn btn-primary">Create Testimonial</a>
-    </div>
 
 </div>
 

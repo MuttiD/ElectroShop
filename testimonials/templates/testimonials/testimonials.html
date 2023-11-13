@@ -4,13 +4,19 @@
 {% block title %}Testimonials{% endblock %}
 
 {% block content %}
-    {% for testimonial in testimonials %}
-        <p><strong>Author: {{ testimonial.name }}</strong></p>        
-        <p>Posted Date: {{ testimonial.posted_date }}</p>
-        <p>Delivery Rating: {{ testimonial.delivery }}</p>
-        <p>Quality Rating: {{ testimonial.quality }}</p>
-        <p>Overall Rating: {{ testimonial.overall }}</p>
-        <p>{{ testimonial.content|safe }}</p>
-        <p>{{ testimonial.review }}</p>
-    {% endfor %}
+<div class="container">
+    <div class="row justify-content-end">
+        <div class="col-md-auto">
+        {% for testimonial in testimonials %}
+            <p><strong>Author: {{ testimonial.name }}</strong></p>        
+            <p>Posted Date: {{ testimonial.posted_date }}</p>
+            <p>Delivery Rating: {{ testimonial.delivery }}</p>
+            <p>Quality Rating: {{ testimonial.quality }}</p>
+            <p>Overall Rating: {{ testimonial.overall }}</p>
+            <p>{{ testimonial.content|safe }}</p>
+            <p>{{ testimonial.review }}</p>
+        {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}
