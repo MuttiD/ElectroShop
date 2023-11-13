@@ -21,15 +21,21 @@ class TestimonialView(ListView):
 
 
 class CreateTestimonial(SuccessMessageMixin, CreateView):
-    """ A class to handle success on creating Testimonials """
-
-    
+    """ A class to handle success on creating Testimonials """    
     template_name = "testimonials/create_testimonial.html"
     model = Testimonial
     form_class = TestimonialForm
     success_url = "/"
     success_message = "testimonial created successfully"
 
+    def get_context_data(self, **kwargs):
+        product_id = self.kwargs['product_id']
+        product = Product.objects.get(id=product_id)
+        context = {
+            "product": product,
+            "form": TestimonialForm()
+        }
+        return context
 
     def form_valid(self, form):
         form.instance.product_id = self.kwargs['product_id']

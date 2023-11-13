@@ -100,7 +100,7 @@
     </div>
 
     <!-- Display comments -->
-    <div class="">
+    <div class="container">
         <h2>Comments</h2>
         <ul>
             {% for comment in comments %}
@@ -132,14 +132,14 @@
 
     <!-- Add a new comment form -->
     {% if user.is_authenticated %}
-    <div class="add-comment">
-        <h2>Add a Comment</h2>
-        <form method="post" action="{% url 'add_comment' product.id %}">
-            {% csrf_token %}
-            {{ comment_form.as_p }}
-            <button class="btn-green" type="submit">Add Comment</button>
-        </form>
-    </div>
+
+            <h2>Add a Comment</h2>
+            <form method="post" action="{% url 'add_comment' product.id %}">
+                {% csrf_token %}
+                {{ comment_form.as_p }}
+                <button class="btn-green" type="submit">Add Comment</button>
+            </form>
+
     {% else %}
     <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
     {% endif %}
