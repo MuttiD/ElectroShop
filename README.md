@@ -200,6 +200,7 @@ and
         * Clearance
 
 <br>
+
 ![navbar](/electroshop/docs/nav_bar.png)
 
 **FRONT PAGE**
@@ -526,7 +527,7 @@ All Python .py files have been submitted to the Code Institute PEP8 checker and 
 
 ### LightHouse
 
-
+![Lighthouse](/electroshop/docs/lighthouse.png)
 
 ### Browsers
 
