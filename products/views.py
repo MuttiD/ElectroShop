@@ -46,15 +46,18 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             # filter the category & name IN the categories list
             products = products.filter(category__name__in=categories)
-            categories = Category.objects.filter(name__in=[str(categories) for category in categories])
+            categories = Category.objects.filter(name__in=[str(categories)
+                                                 for category in categories])
 
         if 'subcategory' in request.GET:
             subcategories = request.GET.getlist('subcategory')
 
-            categories = Category.objects.filter(subcategory__name__in=subcategories).distinct()
+            categories = Category.objects.filter(subcategory__name__in=subcategories
+                                                 ).distinct()
             subcategories = SubCategory.objects.filter(name__in=subcategories)
 
-            products = products.filter(subcategory__name__in=subcategories.values('name'))
+            products = products.filter(subcategory__name__in=subcategories
+                                       .values('name'))
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -62,7 +65,8 @@ def all_products(request):
                 messages.error(request, "Please enter a search criteria.")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | \
+                Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -75,7 +79,8 @@ def all_products(request):
         'current_sorting': current_sorting,
     }
 
-    return render(request, 'products/products.html', context)
+    return render(request, 'products/products.html',
+                  context)
 
 
 def product_detail(request, product_id):
@@ -111,7 +116,8 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. \
+                Please ensure the form is valid.')
     else:
         form = ProductForm()
 
@@ -133,7 +139,7 @@ class CustomSuccessMessageMixin(SuccessMessageMixin):
 def add_comment(request, product_id):
     """ Handles the creating of comments by users """
     product = get_object_or_404(Product, pk=product_id)
-    
+
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
@@ -142,34 +148,39 @@ def add_comment(request, product_id):
             comment.product = product
             comment.save()
             messages.success(request, 'Comment added successfully')
-            return HttpResponseRedirect(reverse('product_detail', args=[product.id]))
+            return HttpResponseRedirect(reverse('product_detail',
+                                                args=[product.id]))
         else:
-            messages.error(request, 'Comment creation failed. Please check the form.')
+            messages.error(request, 'Comment creation failed. \
+                Please check the form.')
+
 
 @login_required
 def update_comment(request, comment_id):
     """ Handles comments updates """
     comment = get_object_or_404(Comment, pk=comment_id)
-    
+
     if request.method == 'POST':
         form = CommentForm(request.POST, instance=comment)
         if form.is_valid():
             form.save()
             messages.success(request, 'Comment updated successfully')
-            return HttpResponseRedirect(reverse('product_detail', args=[comment.product.id]))
+            return HttpResponseRedirect(reverse('product_detail',
+                                                args=[comment.product.id]))
         else:
-            messages.error(request, 'Comment update failed. Please check the form.')
+            messages.error(request, 'Comment update failed. \
+                Please check the form.')
 
     return redirect(reverse('product_detail', args=[comment.product.id]))
+
 
 @login_required
 def delete_comment(request, comment_id):
     """ Handles deletion of comments """
     comment = get_object_or_404(Comment, pk=comment_id)
-    
+
     if request.method == 'POST':
         comment.delete()
         messages.success(request, 'Comment deleted successfully')
 
     return redirect(reverse('product_detail', args=[comment.product.id]))
-

@@ -49,7 +49,7 @@ div#mc_embed_signup {
 /* Buttons */
 
 .shop-now-button {
-    background: #5cae5b;
+    background: #165F16;
     color: white;
     min-width: 260px;
 }
@@ -73,7 +73,7 @@ div#mc_embed_signup {
 }
 
 .btn-green {
-    background: #5cae5b;
+    background: #165F16;
     color: white;
 }
 
@@ -83,7 +83,7 @@ div#mc_embed_signup {
 .btn-green:hover,
 .btn-green:active,
 .btn-green:focus {
-    background: #5cae5b;
+    background: #165F16;
     color: white;
 }
 
@@ -433,7 +433,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   }
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
-    color: #5cae5b;
+    color: #165F16;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 29px;
     font-weight: 700;
@@ -443,7 +443,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   }
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
-    color: #5cae5b;
+    color: #165F16;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 13px;
     font-weight: 400;
@@ -455,7 +455,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol,
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ul,
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol {
-    color: #5cae5b;
+    color: #165F16;
     font-family: 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 13px;
   }
@@ -469,7 +469,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
   }
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p a,
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p a {
-    color: #5cae5b;
+    color: #165F16;
     text-decoration: underline;
   }
 
@@ -798,8 +798,8 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
     height: auto;
   }
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
-    background-color: #5cae5b !important;
-    border-color: #5cae5b !important;
+    background-color: #165F16 !important;
+    border-color: #165F16 !important;
   }
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type="checkbox"] {
     box-sizing: border-box;
@@ -872,7 +872,7 @@ animation: ml-form-embedSubmitLoad 1.2s linear infinite;
     display: none;
   }
   #mlb2-9300001.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
-    background-color: #5cae5b !important;
+    background-color: #165F16 !important;
   }
   .ml-subscribe-close {
     width: 30px;

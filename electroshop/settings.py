@@ -91,11 +91,11 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request',   # required by allauth for requesting objects in our templates (ex.  request.user and request.user.email)
+                'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'bag.contexts.bag_contents',                    # required to make bag fluid throughout
+                'bag.contexts.bag_contents',
             ],
             'builtins': [
                 'crispy_forms.templatetags.crispy_forms_tags',
@@ -109,7 +109,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 AUTHENTICATION_BACKENDS = [
 
-    # Needed for superusers to login by username in Django admin, regardless of `allauth`
+    # Needed for superusers to login by username in Django admin
     'django.contrib.auth.backends.ModelBackend',
 
     # `allauth` specific authentication methods, such as login by e-mail
@@ -119,18 +119,14 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-# from https://docs.djangoproject.com/en/4.1/topics/email/#django.core.mail.backends.smtp.EmailBackend
-# This backend is not intended for use in production
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 # added from a complete project
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'            # get authentication from either a username or email
-ACCOUNT_EMAIL_REQUIRED = True                               # this are required for login in
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'                    # to verify the email address
-ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True                     # to check if the email address is typing correctly
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGHT = 4
-LOGIN_URL = '/accounts/login/'                              # specify the location of the url
-LOGIN_REDIRECT_URL = '/'                                    # redirect to the home page of our online store
+LOGIN_URL = '/accounts/login/'
+LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'electroshop.wsgi.application'
 
@@ -148,10 +144,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
-#DATABASES = {
-#     'default': dj_database_url.parse('')
-#}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators

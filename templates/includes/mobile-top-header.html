@@ -5,7 +5,7 @@
     <li class="list-inline-item">
         <a class="text-black nav-link d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center mob-nav-text">
-                <div><i class="fas fa-search fa-lg" style="color: #5cae5b;"></i></div>
+                <div><i class="fas fa-search fa-lg" style="color: #165F16;"></i></div>
                 <p class="my-0">Search</p>
             </div>
         </a>
@@ -31,9 +31,9 @@
 <!-- My account -->
 <ul>
     <li class="list-inline-item dropdown">
-        <a class="text-black nav-link d-block d-lg-none" href="#" id="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="text-black nav-link d-block d-lg-none" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center ">
-                <div><i class="fa-solid fa-circle-user" style="color: #5cae5b;"></i></div>
+                <div><i class="fa-solid fa-circle-user" style="color: #165F16;"></i></div>
                 <p class="my-0">My Account</p>
             </div>
         </a>
@@ -59,7 +59,7 @@
                 {% else %}text-black
                 {% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
             <div class="text-center">
-                <div><i class="fas fa-shopping-bag fa-lg" style="color: #5cae5b;"></i></div>
+                <div><i class="fas fa-shopping-bag fa-lg" style="color: #165F16;"></i></div>
                 <p class="my-0">
                     {% if grand_total %}
                         ${{ grand_total|floatformat:2 }}

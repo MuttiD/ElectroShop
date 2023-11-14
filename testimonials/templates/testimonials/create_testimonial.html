@@ -6,16 +6,24 @@
 {% block content %}
 
 <div class="container">
-    <div class="col justify-content-end">
-        <form class="testimonial-form" method="POST" enctype="multipart/form-data">
-            <h1>Create Testimonial</h1>
-                <div>Product id = {{ product.id }}</div>
-                <div>Product Name = {{ product.name }}</div>
-            {% csrf_token %} 
-            {{ form }}
-            {{ form.media }}
-            <button class="btn btn-green rounded-0 mt-5" type="submit">Submit</button>
-        </form>
+    <div class="row">
+        <div class="card mb-4 mt-3 left top">
+            <div class="card-body">
+                <p class="card-text">
+                    <div class="col justify-content">
+                        <form class="testimonial-form" method="POST" enctype="multipart/form-data">
+                            <h1>Create Testimonial</h1>
+                                <div>Product id = {{ product.id }}</div>
+                                <div>Product Name = {{ product.name }}</div>
+                            {% csrf_token %} 
+                            {{ form }}
+                            {{ form.media }}
+                            <button class="btn btn-green rounded-0 mt-5" type="submit">Submit</button>
+                        </form>
+                    </div>
+                </p>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

@@ -128,21 +128,22 @@
             </li>
             {% endfor %}
         </ul>
+    
+
+        <!-- Add a new comment form -->
+        {% if user.is_authenticated %}
+
+                <h2>Add a Comment</h2>
+                <form method="post" action="{% url 'add_comment' product.id %}">
+                    {% csrf_token %}
+                    {{ comment_form.as_p }}
+                    <button class="btn-green" type="submit">Add Comment</button>
+                </form>
+
+        {% else %}
+        <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
+        {% endif %}
     </div>
-
-    <!-- Add a new comment form -->
-    {% if user.is_authenticated %}
-
-            <h2>Add a Comment</h2>
-            <form method="post" action="{% url 'add_comment' product.id %}">
-                {% csrf_token %}
-                {{ comment_form.as_p }}
-                <button class="btn-green" type="submit">Add Comment</button>
-            </form>
-
-    {% else %}
-    <p>Please <a href="{% url 'account_login' %}">log in</a> to leave a comment.</p>
-    {% endif %}
 
    
 

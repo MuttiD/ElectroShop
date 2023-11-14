@@ -4,7 +4,7 @@
 
 ### *Site Objective*
 
-The Electronics Shop website aims to expand our market base and provide easily accessible information on what our company stands for.
+The Electronics Shop website is a fictional B2C implemented with Django, Python, HTML, and CSS and aims to expand our market base and provide easily accessible information on what our company stands for.
 
 The user can access the products and make purchases (if logged in), and make their reviews and ratings.
 
@@ -22,8 +22,6 @@ To create a minimum functional E-commerce site, The below must be prioritiesed :
 * SEO language throughout.
 * Order History.
 * Social Media page.
-* Password Recovery.
-* Email confirmation of order.
 * User feedback.
 * Saved customer details on checkout.
 

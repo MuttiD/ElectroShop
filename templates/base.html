@@ -96,7 +96,7 @@
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
-                                <div><i class="fa-solid fa-circle-user" style="color: #5cae5b;"></i></div>
+                                <div><i class="fa-solid fa-circle-user" style="color: #165F16;"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
@@ -125,7 +125,7 @@
                             {% else %}text-black
                             {% endif %} nav-link" href="{% url 'view_bag' %}">
                             <div class="text-center">
-                                <div><i class="fas fa-shopping-bag fa-lg" style="color: #5cae5b;"></i></div>
+                                <div><i class="fas fa-shopping-bag fa-lg" style="color: #165F16;"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
                                         € {{ grand_total|floatformat:2 }}
@@ -152,7 +152,7 @@
         <!-- Delivery banner -->
         <div id="delivery-banner" class="row text-center">
             <div class="col bg-red text-center">
-                <h4 class="text-white my-1">Free delivery on orders over €{{ free_delivery_threshold }} !</h4>
+                <h3 class="text-white my-1">Free delivery on orders over €{{ free_delivery_threshold }} !</h3>
             </div>
         </div>
     </header>
@@ -189,7 +189,7 @@
     {% include 'includes/footer.html' %}
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}

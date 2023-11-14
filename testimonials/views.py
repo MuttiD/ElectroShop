@@ -21,7 +21,8 @@ class TestimonialView(ListView):
 
 
 class CreateTestimonial(SuccessMessageMixin, CreateView):
-    """ A class to handle success on creating Testimonials """    
+    """ A class to handle success on creating Testimonials """
+    
     template_name = "testimonials/create_testimonial.html"
     model = Testimonial
     form_class = TestimonialForm
